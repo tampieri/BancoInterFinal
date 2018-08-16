@@ -56,3 +56,7 @@ foi criado um metodo com a anotation de test: com.higor.demo.BancoInterApiTestFi
 este metodo chama todas os metodos que esta classe possui todas as principais funcionalidades com interação manual ao banco.
 
 Cada um possui sua propria controller e os metodos com as funcionalidades.
+
+no diretorio /BancoInterApiTestFinal/src/main/webapp existe arquivos com a extensão .jsp para testes mas os 
+mesmos ainda nao estão completamente confiaveis necessitam de configurações. Mas não fazem parte do objetivo principal do projeto 
+no caso seria um plus somente.
