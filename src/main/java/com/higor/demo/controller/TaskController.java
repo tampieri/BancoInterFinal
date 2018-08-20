@@ -49,12 +49,13 @@ public class TaskController {
 	
 	//Update Task
 	@PutMapping("/{id}")
-	public ResponseEntity<Optional<Task>> updateTask(@PathVariable int id, @RequestBody Optional<Task> task) {
+	public ResponseEntity<Optional<Task>> updateTask(@PathVariable int id, @RequestBody Task task) {
 		Optional<Task> taskOrigin = repo.findById(id);
 		if(taskOrigin == null) {
 			return ResponseEntity.notFound().build();
 		}
 		BeanUtils.copyProperties(task, taskOrigin, "id");
+		repo.save(task);
         return ResponseEntity.ok(taskOrigin);
     }
 	

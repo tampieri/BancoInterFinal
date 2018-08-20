@@ -49,13 +49,14 @@ public class JobController {
 	
 	//Update Job
 	@PutMapping("/{id}")
-	public ResponseEntity<Optional<Job>> updateJob(@PathVariable int id, @RequestBody Optional<Job> job) {
+	public ResponseEntity<Optional<Job>> updateJob(@PathVariable int id, @RequestBody Job job) {
 		Optional<Job> jobOrigin = repo.findById(id);
 		if(jobOrigin == null) {
 			return ResponseEntity.notFound().build();
 		}
 		BeanUtils.copyProperties(job, jobOrigin, "id");
-        return ResponseEntity.ok(job);
+		repo.save(job);
+        return ResponseEntity.ok(jobOrigin);
     }
 	
 	//Delete Task

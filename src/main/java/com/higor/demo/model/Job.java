@@ -13,9 +13,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name= "JOB")
 public class Job {
+	
 	@Id
 	@Column(name="ID")
-	@GeneratedValue
 	private int id ;
 	
 	@Column(name="NAME")

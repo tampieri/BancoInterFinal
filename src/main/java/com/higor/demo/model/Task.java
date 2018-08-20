@@ -11,7 +11,6 @@ import javax.persistence.Id;
 public class Task {
 	@Id
 	@Column(name="ID")
-	@GeneratedValue
 	private int id;
 	
 	@Column(name="NAME")
